@@ -21,9 +21,7 @@ client.on('ready', () => {
 });
 
 ///////////////Elina url//////////////////
-if (msg.content.includes === https:// 
-  )
- {
+if msg.conent.includes("https://") {
          return;
 }
 
