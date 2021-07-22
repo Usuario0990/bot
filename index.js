@@ -278,7 +278,7 @@ client.on('message', msg => {
 client.on('message', message => {
   if (message.content === 'Cual es mi avatar') {
     // Envio de la URL
-    message.reply(message.author.displayAvatarURL({format: 'jpg'}));
+  
   }
 });
 
