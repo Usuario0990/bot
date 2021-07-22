@@ -338,7 +338,7 @@ client.on('message', message => {
     const embed = new MessageEmbed()
       .setTitle('Toradora Kiss')
       .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/EhzVCBthlrRxPqGXRy/giphy.gif')
+      .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
       .setDescription('(＾▽＾)')
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
