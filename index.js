@@ -20,6 +20,13 @@ client.on('ready', () => {
   presence();
 });
 
+///////////////Elina url//////////////////
+if (msg.content.includes === https:// 
+  )
+ {
+         return;
+}
+
 /////////////// Bienvenida ///////////////
 
 client.on("guildMemberAdd", async (member) => {
@@ -284,7 +291,7 @@ client.on('message', message => {
 
 // Escucha de nuevos mensajes 
 client.on('message', message => {
-  if (message.content === 'cual es mi avatar') {
+  if (message.content === 'ual es mi avatar') {
     // Envio de la URL
     message.reply(message.author.displayAvatarURL({format: 'jpg'}));
   }
