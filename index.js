@@ -298,7 +298,7 @@ client.on('message', message => {
     const embed = new MessageEmbed()
       .setTitle('Monogatari neko')
       .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/9KBexNlpIZ4XkwuzHI/giphy.gif')
+      .setImage('https://media.tenor.com/images/7b91f5303a7727bd196dd1b2d820b578/tenor.gif')
       .setDescription('Prueba de shiro(＾▽＾)')
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
