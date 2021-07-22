@@ -278,7 +278,7 @@ client.on('message', msg => {
 client.on('message', message => {
   if (message.content === 'Cual es mi avatar') {
     // Envio de la URL
-  
+    message.reply(message.author.displayAvatarURL({format: 'jpg'}));
   }
 });
 
@@ -291,25 +291,7 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
 
-  if (message.content === 'set.neko-prueba') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Monogatari neko')
-      .setColor('#00D7FC')
-      .setImage('https://media.tenor.com/images/7b91f5303a7727bd196dd1b2d820b578/tenor.gif')
-      .setDescription('Prueba de shiro(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-//////////////  Respuesta a mensajes //////////////
-
-///////////// Enviar el avatar al server ///////////////
 
 /////////////// SFW ///////////////
 
@@ -317,7 +299,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-  if (message.content === '!status') {
+  if (message.content === '!status-server') {
 
     const embed = new MessageEmbed()
       .setTitle('Estado del sevidor')
