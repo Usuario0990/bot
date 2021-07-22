@@ -282,10 +282,18 @@ client.on('message', message => {
   }
 });
 
+// Escucha de nuevos mensajes 
+client.on('message', message => {
+  if (message.content === 'cual es mi avatar') {
+    // Envio de la URL
+    message.reply(message.author.displayAvatarURL({format: 'jpg'}));
+  }
+});
+
 // Abrebiacion 
 // Escucha de nuevos mensajes 
 client.on('message', message => {
-  if (message.content === 'v') {
+  if (message.content === '!v') {
     // Envio de la URL
     message.reply(message.author.displayAvatarURL({format: 'jpg'}));
   }
