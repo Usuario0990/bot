@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const Zeew = require("zeew");
 const config = require('./config/bot.json');
+const db = require("quick.db")
 
 function presence(){
   client.user.setPresence({
