@@ -134,17 +134,7 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 'Hola') {
-    msg.channel.send(`Hola **${msg.author.username}** como ¿Estas hoy?`);
-  }
-});
 
-client.on('message', msg => {
-  if (msg.content === 'hola') {
-    msg.channel.send(`Hola **${msg.author.username}** como ¿Estas hoy?`);
-  }
-});
 
 client.on('message', msg => {
     if (msg.content === 'Genial') {
