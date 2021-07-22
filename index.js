@@ -20,10 +20,7 @@ client.on('ready', () => {
   presence();
 });
 
-///////////////Elina url//////////////////
-if msg.conent.includes("https://") {
-         return;
-}
+
 
 /////////////// Bienvenida ///////////////
 
