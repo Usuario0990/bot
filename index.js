@@ -15,7 +15,7 @@ function presence(){
   })
 }
 
-client.on('ready', () => {
+client.on('!Listo', () => {
   console.log(`Sesión iniciada como ${client.user.tag}!`);
   presence();
 });
@@ -266,17 +266,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-    if (msg.content === 'Check update') {
-      msg.channel.send(`:white_check_mark:`);
-  }
-});
-
-client.on('message', msg => {
-    if (msg.content === 'check update') {
-      msg.channel.send(`:white_check_mark:`);
-  }
-});
 
 ///////////// Enviar el avatar al server ///////////////
 
@@ -290,7 +279,7 @@ client.on('message', message => {
 
 // Escucha de nuevos mensajes 
 client.on('message', message => {
-  if (message.content === 'ual es mi avatar') {
+  if (message.content === 'cual es mi avatar') {
     // Envio de la URL
     message.reply(message.author.displayAvatarURL({format: 'jpg'}));
   }
