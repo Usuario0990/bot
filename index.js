@@ -22,40 +22,7 @@ client.on('ready', () => {
 
 
 // niveles //
-const db = require("quick.db")
-const Discord = require("discord.js")
 
-exports.run = async (client, message, args) => {
-    //Sacamos todos los datos y filtramos para sacar todos los users'?xd
-    let data = await db.all()
-    data = data.filter(i => i.ID.startsWith(xp_${message.guild.id})).sort((a, b) => b.data - a.data);
-    if (data.length < 1) return message.channel.send("No members to be on the leaderboard yet!"); //Si no hay ningún usuario retorna un mensaje
-    data.length = 20; //Hacemos que la cantidad de usuarios que se mostrarán sea igual a 20, si ustedes quieren ponerle 10 o otro número está bien
-let lb = [];
-    for (let i in data)  {
-      let id = data[i].ID.split("")[2];
-      let user = await client.users.cache.get(${id});
-      user = user ? user.tag : "Unknown User#0000"; //Utilizamos un operador ternario para que si user existe nos devuelva los user-tag de lo contrario saldrá "Unknown User#0000"
-      let rank = data.indexOf(data[i]) + 1; //obtenemos los ranks
-      let level = await db.get(`level${message.guild.id}_${id}`); //Obtenemos los niveles
-      if (level == null) level = 1; //Si el nivel es nulo o indefinido, hacemos que sea igual a 1
-      let xp = data[i].data
-      let xpreq = 5 * (level ** 2) + 50 * level + 100; //Definimos xpreq con esto para saber la xp necesaria para subir de nivel (Todo dependiendo del nivel del usuario)
-      lb.push({
-        user: { id, tag: user },
-        rank, level, xp, xpreq
-      });
-    };
-const embed = new Discord.MessageEmbed() //Abrimos el embed
-    .setAuthor(${message.guild.name} - Top 20, message.guild.iconURL) //En la parte de arriba saldrá el nombre del servidor + top 20 y el icono del servidor
-    .setColor("RANDOM") //Hacemos que el embed tenga un color random
-    lb.forEach(member => {
-        embed.addField(
-          ${member.rank}. ${member.user.tag}, **Level** - ${member.level}\n**XP** - ${(member.xp).replace(/['"]+/g, '')} / ${member.xpreq}
-        );
-    });
-    return message.channel.send(embed); //Por ultimo enviamos el embed
-}
 
 
 
