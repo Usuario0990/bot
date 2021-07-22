@@ -8,9 +8,9 @@ function presence(){
   client.user.setPresence({
     status:"online",
     activity: {
-      name:"Bienvenido/a seas a estos lares",
-      type:"STREAMING",
-      url: "https://www.twitch.tv/usuario099004"
+      name:"Bienvenido/a SUSCRIBETE al canal de Youtube",
+      type:"YOUTUBER",
+      url: "https://www.youtube.com/channel/UCP_CFZCBFqb1m3UUfhSfloA"
     }
   })
 }
@@ -32,7 +32,7 @@ client.on("guildMemberAdd", async (member) => {
     .colorTit("#fff")
     .titulo("Bienvenido " + member.displayName)
     .colorDesc("#fff")
-    .descripcion("Tenemos un nuevo coder con nosotros")
+    .descripcion("Tenemos un nuevo integrante con nosotros")
 
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "bienvenida.png")
