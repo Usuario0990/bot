@@ -322,7 +322,7 @@ client.on('message', message => {
     const embed = new MessageEmbed()
       .setTitle('Monogatari neko')
       .setColor('#00D7FC')
-      .setImage('https://media.tenor.com/images/7b91f5303a7727bd196dd1b2d820b578/tenor.gif')
+      .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
       .setDescription('(＾▽＾)')
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
@@ -347,133 +347,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-
-  if (message.content === 'set.slap') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Eromanga Sensei slap')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/JEd9BMo7ixvmVIsWJF/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.wink') {
-
-    const embed = new MessageEmbed()
-      .setTitle('princess connect re dive wink')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/DPype2bGDAjWkxPprM/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.run') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Hunter x Hunter run')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/ePG7LU78fFrWGCn4s5/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.dance') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Another dance')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/IylSJZFrT5IHReCZ3c/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.hug') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Kyoukai no kanata hug')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/Du2REnqhImbTPOvTNZ/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.cry') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Violet evergarden cry')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/CeZDh2tU4EPi7lc5IG/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.punch') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Toradora punch')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/tbWv4ChfCDJXOz4i1w/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
-
-client.on('message', message => {
-
-  if (message.content === 'set.wasted') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Love live wasted')
-      .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/SpVYVPQVn9rQSdTdT4/giphy.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
 
 /////////////// Mensajes Embed ///////////////
 
