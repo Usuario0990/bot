@@ -293,7 +293,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-  if (message.content === 'set.neko') {
+  if (message.content === 'set.neko-prueba') {
 
     const embed = new MessageEmbed()
       .setTitle('Monogatari neko')
@@ -317,12 +317,12 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-  if (message.content === 'set.neko-xd') {
+  if (message.content === 'set.neko') {
 
     const embed = new MessageEmbed()
       .setTitle('Monogatari neko')
       .setColor('#00D7FC')
-      .setImage('https://media.giphy.com/media/9KBexNlpIZ4XkwuzHI/giphy.gif')
+      .setImage('https://media.tenor.com/images/7b91f5303a7727bd196dd1b2d820b578/tenor.gif')
       .setDescription('(＾▽＾)')
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
