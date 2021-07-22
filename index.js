@@ -317,10 +317,10 @@ client.on('message', message => {
 
 client.on('message', message => {
 
-  if (message.content === 'set.neko') {
+  if (message.content === '!status') {
 
     const embed = new MessageEmbed()
-      .setTitle('Monogatari neko')
+      .setTitle('Estado del sevidor')
       .setColor('#00D7FC')
       .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
       .setDescription('(＾▽＾)')
@@ -331,21 +331,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-
-  if (message.content === 'set.kiss') {
-
-    const embed = new MessageEmbed()
-      .setTitle('Toradora Kiss')
-      .setColor('#00D7FC')
-      .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
-      .setDescription('(＾▽＾)')
-      .addField('Servidor', message.guild.name, true)
-      .addField('Miembros', message.guild.memberCount, true);
-
-    message.channel.send(embed);
-  }
-});
 
 
 /////////////// Mensajes Embed ///////////////
