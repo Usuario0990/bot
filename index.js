@@ -235,6 +235,18 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content === 'bot de la mrd xd') {
+    msg.channel.send(`La tuya por siacaso  **${msg.author.username}**`);
+}
+});
+
+client.on('message', msg => {
+  if (msg.content === 'callese buen freco') {
+    msg.channel.send(`freca tu abuela  **${msg.author.username}**`);
+}
+});
+
+client.on('message', msg => {
     if (msg.content === 'Buenas noches') {
       msg.channel.send(`Que la pases bien **${msg.author.username}**`);
   }
