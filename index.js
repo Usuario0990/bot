@@ -99,38 +99,38 @@ client.on('message', message => {
 //////////////  Respuesta a mensajes //////////////
 
 client.on('message', msg => {
-  if (msg.content === 'Wenas') {
+  if (msg.content === 'Hola') {
     msg.channel.send(`Hola bienvenido/a **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'wenas') {
+  if (msg.content === 'hola') {
     msg.channel.send(`Hola bienvenido/a **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'Gracias Rias') {
-    msg.channel.send(`De nada **${msg.author.username}**`);
+  if (msg.content === 'como estas ') {
+    msg.channel.send(` Bien y tu  **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'gracias rias') {
-    msg.channel.send(`De nada **${msg.author.username}**`);
+  if (msg.content === 'bien ') {
+    msg.channel.send(`exelente me alegro por ti  **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'grasias rias') {
-    msg.channel.send(`De nada **${msg.author.username}**`);
+  if (msg.content === 'jejeje') {
+    msg.channel.send(`jejeje **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'Grasias') {
-    msg.channel.send(`De nada **${msg.author.username}**`);
+  if (msg.content === 'Que tal') {
+    msg.channel.send(`Hola COMO ESTAS? **${msg.author.username}**`);
   }
 });
 
@@ -147,8 +147,8 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'Bastante bien') {
-      msg.channel.send(`Genial! me alegro **${msg.author.username}**.`);
+    if (msg.content === 'Genial') {
+      msg.channel.send(`Genial me alegro **${msg.author.username}**.`);
   }
 });
 
@@ -187,7 +187,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.author.bot) return;
-    if (msg.content === 'xD') {
+    if (msg.content === 'xd') {
       msg.channel.send('XD');
   }
 });
@@ -199,7 +199,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'Por fin he vuelto') {
+    if (msg.content === ' he vuelto') {
       msg.channel.send(`Genial! bienvenido de vuelta **${msg.author.username}**`);
   }
 });
@@ -223,13 +223,13 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'Buenas noches por hoy me retiro') {
-      msg.channel.send(`Que la pases bien **${msg.author.username}**`);
+    if (msg.content === 'Buenas noches ') {
+      msg.channel.send(` Buenas noches, Que la pases bien **${msg.author.username}**`);
   }
 });
 
 client.on('message', msg => {
-    if (msg.content === 'buenas noches por hoy me retiro') {
+    if (msg.content === 'me retiro') {
       msg.channel.send(`Que la pases bien **${msg.author.username}**`);
   }
 });
