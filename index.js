@@ -15,7 +15,7 @@ function presence(){
   })
 }
 
-client.on('!Listo', () => {
+client.on('ready', () => {
   console.log(`Sesión iniciada como ${client.user.tag}!`);
   presence();
 });
@@ -83,7 +83,23 @@ client.on("guildMemberRemove", async (member) => {
 
 //////////////  Respuesta a mensajes //////////////
 
+let miembro = message.mentions.users.first()
+if (!miembro) {
+    const embed = new Discord.MessageEmbed()
+        .setImage(`${message.author.displayAvatarURL()}`)
+        .setColor(0x66b3ff)
+        .setFooter(`Avatar de ${message.author.tag}`);
+    message.channel.send(embed);
 
+} else {
+    const embed = new Discord.MessageEmbed()
+        .setImage(`${miembro.displayAvatarURL()}`)
+        .setColor(0x66b3ff)
+        .setFooter(`Avatar de ${miembro.tag}`);
+
+    message.channel.send(embed);
+
+};
 
 /////////////// Anuncio Embed //////////////////
 
