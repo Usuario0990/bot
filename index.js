@@ -267,6 +267,13 @@ client.on('message', msg => {
 });
 
 
+client.on('message', msg => {
+    if (msg.content === '@STRICKS que hora es') {
+      msg.channel.send('no tengo cara de reloj para saber la hora XD');
+  }
+});
+
+
 ///////////// Enviar el avatar al server ///////////////
 
 // Escucha de nuevos mensajes 
