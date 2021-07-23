@@ -303,7 +303,35 @@ client.on('message', message => {
 
 
 
-/////////////// SFW ///////////////
+/////////////// Ban ///////////////
+
+if (command === "ban") { //command Definido
+  let permsBot = message.guild.me.hasPermission("BAN_MEMBERS") 
+  //Verificamos permisos del bot
+  if (!permsBot) return message.channel.send("X | Bot sin permisos.")
+    
+  let perms = message.member.hasPermission("BAN_MEMBERS") //Verificamos permisos del user
+  if (!perms) return message.channel.send("X | Usted no tiene permisos")
+
+  let persona = message.mentions.members.first() //Sino menciono a naadie
+  if(!persona) return message.channel.send('X | Debe mencionar a alguien')
+
+  if(persona.highestRole.comparePositionTo(message.member.highestRole) > 0){ //Si tiene el mismo rango o mayor (en Jerarquia)
+      return message.channel.send("X | Usuario mayor o igual rango que usted")
+  }
+  
+  var razon = args.slice(1).join(' ') //Una razon ("Sin Razon" por Default)
+  if(!razon) {
+    razon = `Sin Razon` 
+  }
+  
+  razon = razon+`, Baneado por ${message.author.tag}`
+      
+//Lo Baneamos
+  persona.ban(razon).catch(e => message.reply("X | Error Desconocido")) //Si ocurre un error
+  message.channel.send(`:white_check_mark: | ${persona.user.tag} Baneado`) //Ultimo mensaje
+}
+
 
 /////////////// Mensajes Embed ///////////////
 
