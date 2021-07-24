@@ -148,7 +148,17 @@ client.on('message', message => {
 
 /////////////// server ///////////////
 
+client.on("message", message => {
+  // Codigo para definir 'command'
 
+  if(command === "comando1") {
+    /* Codigo del comando 1 */
+  }
+  if(command === "comando2") {
+    /* Codigo del comando 2 */
+  }
+  // Etc..
+});
 
 
 /////////////// Mensajes Embed ///////////////
