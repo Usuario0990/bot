@@ -4,11 +4,12 @@ const client = new Discord.Client();
 const Zeew = require("zeew");
 const config = require('./config/bot.json');
 
+
 function presence(){
   client.user.setPresence({
     status:"online",
     activity: {
-      name:"",
+      name:"Bienvenido/a SUSCRIBETE al canal de Youtube",
       type:"YOUTUBER",
       url: "https://www.youtube.com/channel/UCP_CFZCBFqb1m3UUfhSfloA"
     }
@@ -21,12 +22,10 @@ client.on('ready', () => {
 });
 
 
-// bp //
-const words = ["words"];
-// Establecemos las palabras
-if (words.includes(message.content)) {
-// Acá verificamos si el contenido del mensaje contiene alguna de las palabras que hay en el array
-}
+// niveles //
+
+
+
 
 /////////////// Bienvenida ///////////////
 
