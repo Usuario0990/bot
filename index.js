@@ -302,7 +302,32 @@ client.on('message', message => {
 
 
 
-/////////////// Ban ///////////////
+/////////////// avatar prueba ///////////////
+
+if(command === 'avatar'){
+
+  let img = message.mentions.users.first()
+  if (!img) {
+
+      const embed = new Discord.RichEmbed()
+      .setImage(`${message.author.avatarURL}`)
+      .setColor(0x66b3ff)
+      .setFooter(`Avatar de ${message.author.username}#${message.author.discriminator}`);
+      message.channel.send({ embed });
+
+  } else if (img.avatarURL === null) {
+
+      message.channel.sendMessage("El usuario ("+ img.username +") no tiene avatar!");
+
+  } else {
+
+      const embed = new Discord.RichEmbed()
+      .setImage(`${img.avatarURL}`)
+      .setColor(0x66b3ff)
+      .setFooter(`Avatar de ${img.username}#${img.discriminator}`);
+      message.channel.send({ embed });
+
+  };
 
 
 /////////////// Mensajes Embed ///////////////
@@ -334,50 +359,6 @@ client.on('message', message => {
 
 /////////////// spam ///////////////
 
-
-
-function quitarTilde(texto) { //Quitarle las tildes al texto, para evitar que los usen para poder saltar el AntiSPAM
-  return texto
-         .normalize('NFD')
-         .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1")
-         .normalize();
-}
-
-
-function verificarSPAM() {
-      let SPAM = ['discord.gg', 'agrega-mas-aqui']; 
-      //Las palabras declaradas como SPAM
-      
-      if(SPAM.some((x) => quitarTilde(message.content.toLowerCase()).match(x))) {//Si el mensaje enviado contiene alguna de estas palabras, ejecuta el embed. PD: Si el mensaje tiene mayusculas, tambien se detectar�, esta es la funci�n de '.toLowerCase()'
-          const embed = new Discord.MessageEmbed()
-              .setTitle(':x: | AntiSPAM')
-              .setColor(0x0099FF)
-              .setDescription('**Tu mensaje ha sido clasificado como SPAM, por lo tanto, no se enviar�**')
-              .addField('Informaci�n', "**Est� prohibido enviar invitaciones, si contin�as, ser�s baneado**");
-              message.channel.send(embed); //Elimina el mensaje enviado y envia este embed.
-          
-          message.delete();
-          const advert = new Discord.MessageEmbed()
-              .setTitle(':shield: | SPAM')
-              .addField("Canal:", `<#${message.channel.id}>`, true)
-              .addField("Usario:", `<@${message.author.id}>`, true)
-              .addField("Mensaje:", message.content, true)
-              .addField("Fecha:", new Date());
-              client.channels.cache.get('ID-CANAL').send(advert).catch(console.error);//Aqu� podemos enviar el Embed a un canal en especial, si lo quieren usenlo y si no, borrenlo.
-              
-      }
-}
-
-verificarSPAM(); //Usa la funci�n "verificarSPAM"
-
-
-/* No olvides dejar tu Like si te sirvi�!
-
-#NoAlCopyPaste
-
-Arreglado 14/4/2021, Gracias a "Rencrack#5577" por mostrarme el error
-
-*/
 
 
 ////////////// Lenguajes de programación //////////////
