@@ -189,8 +189,10 @@ client.on('message', message => {
       .setColor('#00D7FC')
       .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
       .setDescription('(＾▽＾)')
+      .addField('Dueño del Servidor', server.owner.user.username+'#'+server.owner.user.discriminator+' ('+server.owner.user.id +')', true)
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
+      
 
     message.channel.send(embed);
   }
