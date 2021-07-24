@@ -116,13 +116,6 @@ client.on('message', msg => {
 });
 
 
-// mensajes b//
-const words = ["words"];
-// Establecemos las palabras
-if (words.includes(message.content)) {
-// Acá verificamos si el contenido del mensaje contiene alguna de las palabras que hay en el array
-}
-
 
 ///////////// Enviar el avatar al server ///////////////
 
@@ -172,6 +165,7 @@ client.on('message', message => {
       .setColor('#00D7FC')
       .setImage('https://media.tenor.com/images/648398bbc2ebb992f8f9b277e48aa2c0/tenor.gif')
       .setDescription('(＾▽＾)')
+      .addField('Dueño del Servidor', server.owner.user.username+'#'+server.owner.user.discriminator+' ('+server.owner.user.id +')', true)
       .addField('Servidor', message.guild.name, true)
       .addField('Miembros', message.guild.memberCount, true);
       
