@@ -4,12 +4,11 @@ const client = new Discord.Client();
 const Zeew = require("zeew");
 const config = require('./config/bot.json');
 
-
 function presence(){
   client.user.setPresence({
     status:"online",
     activity: {
-      name:"Bienvenido/a SUSCRIBETE al canal de Youtube",
+      name:"",
       type:"YOUTUBER",
       url: "https://www.youtube.com/channel/UCP_CFZCBFqb1m3UUfhSfloA"
     }
