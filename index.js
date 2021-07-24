@@ -302,32 +302,13 @@ client.on('message', message => {
 
 
 
-/////////////// avatar prueba ///////////////
+/////////////// bloque palabras ///////////////
 
-if(command === 'avatar'){
-
-  let img = message.mentions.users.first()
-  if (!img) {
-
-      const embed = new Discord.RichEmbed()
-      .setImage(`${message.author.avatarURL}`)
-      .setColor(0x66b3ff)
-      .setFooter(`Avatar de ${message.author.username}#${message.author.discriminator}`);
-      message.channel.send({ embed });
-
-  } else if (img.avatarURL === null) {
-
-      message.channel.sendMessage("El usuario ("+ img.username +") no tiene avatar!");
-
-  } else {
-
-      const embed = new Discord.RichEmbed()
-      .setImage(`${img.avatarURL}`)
-      .setColor(0x66b3ff)
-      .setFooter(`Avatar de ${img.username}#${img.discriminator}`);
-      message.channel.send({ embed });
-
-  };
+let palabras = ["palabra1", "palabra2" ] //El array con palabras, obviamente si queres agregas más
+for(let sim of palabras){ //Hacemos un for
+if(new RegExp(sim).test(message.content)){ //Creamos el regexp en base a las palabras del array
+//Lo que se hace si el contenido del mensaje contiene tal palabra
+}}
 
 
 /////////////// Mensajes Embed ///////////////
@@ -371,4 +352,4 @@ client.on('message', msg => {
 
 /////////////// SFW ///////////////
 
-client.login(config.token_bot)}
+client.login(config.token_bot);
