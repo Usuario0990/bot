@@ -304,7 +304,7 @@ client.on('message', message => {
 
 /////////////// bloque palabras ///////////////
 
-let palabras = ["palabra1", "palabra2" ] //El array con palabras, obviamente si queres agregas más
+let palabras = ["palabra1", "palabra2", ] //El array con palabras, obviamente si queres agregas más
 for(let sim of palabras){ //Hacemos un for
 if(new RegExp(sim).test(message.content)){ //Creamos el regexp en base a las palabras del array
 //Lo que se hace si el contenido del mensaje contiene tal palabra
