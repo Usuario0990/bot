@@ -222,7 +222,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
   if (message.content === "!list") {
     const embed = new MessageEmbed()
-      .setTitle("Lista de comandos de Kurayami")
+      .setTitle("Lista de comandos de Striks")
       .setColor("#00D7FC")
       .setDescription("**Meme:** ^:point_down:^ \n\n\ !mem1 \n\n\ !meme2 \n\n\ !meme3 \n\n\ !meme4 \n\n\ **Mensajes dinamicos:** ^proximamente^");
 
