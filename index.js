@@ -224,7 +224,7 @@ client.on("message", (message) => {
     const embed = new MessageEmbed()
       .setTitle("Lista de comandos de Striks")
       .setColor("#00D7FC")
-      .setDescription("**Meme:** ^:point_down:^ \n\n\ !mem1 \n\n\ !meme2 \n\n\ !meme3 \n\n\ !meme4 \n\n\ **Mensajes dinamicos:** ^proximamente^");
+      .setDescription("**Lista de Memes:** ^:point_down:^ \n\n\ !mem1 \n\n\ !meme2 \n\n\ !meme3 \n\n\ !meme4 \n\n\ **Mensajes dinamicos:** ^proximamente^");
 
     message.channel.send(embed);
   }
