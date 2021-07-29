@@ -155,6 +155,22 @@ client.on('message', message => {
 /////////////// Mensajes Embed ///////////////
 
 
+client.on("message", (message) => {
+  if (message.content === "k!meme2") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "https://images3.memedroid.com/images/UPLOADED315/5dd03138e4f86.jpeg"
+      )
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
+
+
 
 
 client.on('message', message => {
