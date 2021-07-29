@@ -105,13 +105,13 @@ client.on('message', message => {
 
 client.on('message', msg => {
   if (msg.content === 'Hola') {
-    msg.channel.send(`Hola bienvenido/a **${msg.author.username}**`);
+    msg.channel.send(`Hola **${msg.author.username}** bienvenido/a `);
   }
 });
 
 client.on('message', msg => {
   if (msg.content === 'hola') {
-    msg.channel.send(`Hola  **${msg.author.username}** bienvenido/a`);
+    msg.channel.send(`Hola **${msg.author.username}** bienvenido/a`);
   }
 });
 
