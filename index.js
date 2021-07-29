@@ -156,7 +156,7 @@ client.on('message', message => {
 
 
 client.on("message", (message) => {
-  if (message.content === "k!meme2") {
+  if (message.content === "!meme1") {
     const embed = new MessageEmbed()
       .setTitle("")
       .setColor("#00D7FC")
@@ -171,6 +171,22 @@ client.on("message", (message) => {
 });
 
 
+
+
+client.on("message", (message) => {
+  if (message.content === "!meme2") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "https://pm1.narvii.com/6708/dc654ffbab5b1c60fa733196a65665a7aef79788_hq.jpg"
+      )
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
 
 
 client.on('message', message => {
