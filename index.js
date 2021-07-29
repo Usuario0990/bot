@@ -189,6 +189,37 @@ client.on("message", (message) => {
 });
 
 
+client.on("message", (message) => {
+  if (message.content === "!meme3") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "http://memeschistosos.net/wp-content/uploads/2016/03/memes-de-naruto20.jpg"
+      )
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
+
+client.on("message", (message) => {
+  if (message.content === "!meme4") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "https://i.pinimg.com/originals/20/c2/7f/20c27f0a77ee484b0df539ed5a750246.jpg"
+      )
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
+
+
 client.on('message', message => {
 
   if (message.content === '!status-server') {
