@@ -127,6 +127,15 @@ client.on('guildMemberAdd', member => {
 });
 
 
+// Create an event listener for messages
+client.on('message', message => {
+  // If the message is "what is my avatar"
+  if (message.content === 'avatar2') {
+    // Send the user's avatar URL
+    message.reply(message.author.displayAvatarURL());
+  }
+});
+
 
 ///////////// Enviar el avatar al server ///////////////
 
