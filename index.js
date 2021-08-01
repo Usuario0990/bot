@@ -88,7 +88,7 @@ client.on("guildMemberRemove", async (member) => {
 
 client.on('message', message => {
 
-  if (message.content === 'El YorWTF just posted a video!') {
+  if (message.content === 'YorWTF!') {
 
     const embed = new MessageEmbed()
       .setTitle('¡Nuevo video del canal!')
@@ -120,9 +120,11 @@ client.on('message', msg => {
 
 // heroku git:clone -a botd00
 
+// bienvenida
+
 client.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
+  const channel = member.guild.channels.cache.find(ch => ch.name === '863239100059615253');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
@@ -211,7 +213,7 @@ client.on('message', message => {
 
 
 
-/////////////// Mensajes Embed ///////////////
+/////////////// Memes ///////////////
 
 
 client.on("message", (message) => {
