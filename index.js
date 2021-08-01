@@ -335,22 +335,7 @@ client.on('message', message => {
   }
 });
 
-const user = message.author;
-const member = message.member;
 
-const embed = new Discord.MessageEmbed()
-
-    .setAuthor('Username: ' + user.tag, user.avatarURL())
-    .setThumbnail(user.avatarURL())
-    .addField('Creación de la cuenta', user.createdAt.toLocaleDateString(), true)
-    .addField('Estado', user.presence.status, true)
-    .addField('Apodo', member.nickname ? member.nickname : 'No tiene', true)
-    .addField('Roles', 
-        message.member.roles.cache.map(rol => '`' + rol.name + '`').join(', ')
-    )
-    .setFooter('ID: ' + user.id)
-
-message.channel.send({embed});
 
 
 
