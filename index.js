@@ -286,6 +286,21 @@ client.on("message", (message) => {
   }
 });
 
+
+client.on("message", (message) => {
+  if (message.content === "!meme6") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "https://media.discordapp.net/attachments/863239100059615253/871229994054062080/images9.jpg")
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
+
 client.on("message", (message) => {
   if (message.content === "!list") {
     const embed = new MessageEmbed()
