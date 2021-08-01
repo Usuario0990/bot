@@ -336,41 +336,6 @@ client.on('message', message => {
 });
 
 
-const usuarioMencionado = message.mentions.users.first();
-if(!usuarioMencionado) {
-
-const user = message.author;
-const member = message.member;
-
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Nombre: ' + user.tag, user.avatarURL())
-.setThumbnail(user.avatarURL())
-.addField('Creación de la cuenta', user.createdAt.toLocaleDateString(), true)
-.addField('Estado', user.presence.status, true)
-.addField('Apodo', member.nickname ? member.nickname : 'No tiene', true)
-.addField('Roles', message.member.roles.cache.map(rol => '`' + rol.name + '`').join(', '))
-.setFooter('ID: ' + user.id)
-
-message.channel.send({embed: embed});
-} else {
-
-const miembroMencionado = message.mentions.members.first();
-
-const embed = new Discord.MessageEmbed()
-
-.setAuthor('Nombre: ' + usuarioMencionado.tag, usuarioMencionado.avatarURL())
-.setThumbnail(usuarioMencionado.avatarURL())
-.addField('Creación de la cuenta', usuarioMencionado.createdAt.toLocaleDateString(), true)
-.addField('Estado', usuarioMencionado.presence.status, true)
-.addField('Apodo', miembroMencionado.nickname ? miembroMencionado.nickname : 'No tiene', true)
-.addField('Roles', message.member.roles.cache.map(rol => '`' + rol.name + '`').join(', '))
-.setFooter('ID: ' + usuarioMencionado.id)
-
-message.channel.send({embed: embed});
-};
-
-
 
 
 /////////////// spam ///////////////
