@@ -170,12 +170,7 @@ client.on('message', message => {
 
 //palabras proividas
 
-const malaPalabra = ["Idiota","imbecil","baboso","aea"]
-if(malaPalabra.some(w => message.content.includes(w))){
-message.delete(malaPalabra)
-message.channel.send("Esa palabra aqui no esta permitida");
 
-}
 
 
 // algo nuevo
