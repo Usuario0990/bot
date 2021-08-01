@@ -156,13 +156,13 @@ client.on('message', message => {
           })
           .then(() => {
             // We let the message author know we were able to ban the person
-            message.reply(`Prohibido con éxito ${user.tag}`);
+            message.reply(`Se a banneado con éxito a ${user.tag}`);
           })
           .catch(err => {
             // An error happened
             // This is generally due to the bot not being able to ban the member,
             // either due to missing permissions or role hierarchy
-            message.reply('No pude prohibir al miembro');
+            message.reply('No puedo bannear al miembro');
             // Log the error
             console.error(err);
           });
@@ -177,25 +177,7 @@ client.on('message', message => {
   }
 });
 
-//embed
 
-client.on('message', message => {
-  // If the message is "how to embed"
-  if (message.content === 'embed') {
-    // We can create embeds using the MessageEmbed constructor
-    // Read more about all that you can do with the constructor
-    // over at https://discord.js.org/#/docs/main/master/class/MessageEmbed
-    const embed = new MessageEmbed()
-      // Set the title of the field
-      .setTitle('A slick little embed')
-      // Set the color of the embed
-      .setColor(0xff0000)
-      // Set the main content of the embed
-      .setDescription('Hello, this is a slick embed!');
-    // Send the embed to the same channel as the message
-    message.channel.send(embed);
-  }
-});
 
 
 ///////////// Enviar el avatar al server ///////////////
