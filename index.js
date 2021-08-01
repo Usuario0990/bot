@@ -273,6 +273,20 @@ client.on("message", (message) => {
 });
 
 client.on("message", (message) => {
+  if (message.content === "!meme5") {
+    const embed = new MessageEmbed()
+      .setTitle("")
+      .setColor("#00D7FC")
+      .setImage(
+        "https://media.discordapp.net/attachments/863239100059615253/871227422463365200/Screenshot_20210104-143026.png?width=252&height=448")
+          .setDescription("")
+          .setTimestamp()
+      .setAuthor(`${client.user.username}`)
+    message.channel.send(embed);
+  }
+});
+
+client.on("message", (message) => {
   if (message.content === "!list") {
     const embed = new MessageEmbed()
       .setTitle("Lista de comandos de Striks")
