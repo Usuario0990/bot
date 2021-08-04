@@ -71,7 +71,7 @@ client.on("guildMemberRemove", async (member) => {
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "despedida.png");
 
-  client.channels.resolve("816052331744591902").send(attachment);
+  client.channels.resolve("867822344809873449").send(attachment);
 
 });
 
