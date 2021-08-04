@@ -133,13 +133,13 @@ client.on("guildMemberAdd'", member => {
 
   .setTitle("bienvenida")
 ///en .setColor() Dejen El 0x ejemplo: 0x39ff14, despues del ///0x ponen el hex del color
-	.setColor("0x(Y El Hex Del Color Sin El #)")
+	.setColor("#00D7FC")
   .setDescription("descripcion")
-  .setImage("la url de la imagen(opciona)")                                                                                         
+  .setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKe13RQvFFPRaYGJdBtgWEilrmHJMMLAyzw&usqp=CAU")                                                                                         
 
-  client.channels.cache.get("id del canal").send(welcome)
+  client.channels.cache.get("863239100059615253").send(welcome)
 ///Opcional
-  member.roles.add("id")
+  member.roles.add("870479186341556274")
 });
 
 
