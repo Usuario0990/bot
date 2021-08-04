@@ -84,6 +84,31 @@ client.on("guildMemberRemove", async (member) => {
 
 //////////////  Respuesta a mensajes //////////////
 
+client.on('message', message => {
+
+  if (message.content === '!rol') {
+
+    const embed = new MessageEmbed()
+      .setTitle('¡Elige tu rol!')
+      .setColor('#00D7FC')
+      .setDescription('prueba 1')
+
+    message.channel.send(embed);
+
+    member.roles.add("870479186341556274")
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
 /////////////// Anuncio Embed //////////////////
 
 client.on('message', message => {
