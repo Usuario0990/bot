@@ -55,6 +55,23 @@ client.on("guildMemberAdd", async (member) => {
 });
 
 
+let wel = new Zeew.Bienvenida()
+.token("610add420069e6f82b758f6a") // pide tu token
+.estilo("classic") //classic o anime
+.avatar(member.user.displayAvatarURL({ format: "png" }))
+.fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+.colorTit("#FF3DB0")
+.titulo("Bienvenido")
+.colorDesc("#fff")
+.descripcion("Tenemos un nuevo coder con nosotros);
+    
+let img = await Zeew.WelcomeZeew(wel);
+let attachment = new MessageAttachment(img, "zeew.gif");
+
+channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#816048713478307902> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
+    
+client.channels.resolve("868611544202743819").send(attachment);
+
 /////////////// Despedida ///////////////
 
 client.on("guildMemberRemove", async (member) => {
