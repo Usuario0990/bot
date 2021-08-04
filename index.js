@@ -29,58 +29,60 @@ client.on('ready', () => {
 
 /////////////// Bienvenida ///////////////
 
+client.on("guildMemberAdd", async (member) => {
 
-client.on("guildMemberAdd", async (member) => { //cada que el bot registre que hay un nuevo mienbro realisara la sigiente funcion
-    
-    let guild = client.guilds.cache.get("863239099385118721")   
-    let channel = client.channels.cache.get("868611544202743819");  
-  
-   
-  if (guild != member.guild) {
-    return console.log(`entro al grupo, ${member.user}`) // cada que se agrege un mienbro al grupo pondra el sigiente texto en la consola *puedes modificarlo*
-  
-  } else {
-     let embed = new MessageEmbed() // se creara un embed que tendra lo sigiente  
-   .setColor("GREEN") // el color del embed sera verde por defecto si quieres puedes modificarlo tansolo poniendo el nombre de el color en ingles: red,purple,etc tambien puedes poner un color de paleta #0000 *este es negro*
-   .setAuthor(member.user.tag, member.user.displayAvatarURL()) // esta parte lo que hace es poner el nombre del usuario y imagen en la parte de arriba 
-   .setImage('https://media.giphy.com/media/TKv4j0jA2IUfcLFCKl/giphy.gif') //el gif que quieras poner, yo te recuerdo que pongas uno de giphy 
-   .setTitle(`Bienvenido a ${guild.name}`) // mensaje que pondra en el titulo puedes modificarlo , seria algo asi " bienvenido a discord ayuda" 
-   .setDescription(`${member.user} Diviertete En El Servidor !`) // aqui es la parte de descripcion puedes modificarlo , es el mensaje que pondra en el embed puedes cambiarlo a tu gusto en este caso se veria asi "@usuarioqueentro diviertete en el servidor"
-   .setThumbnail(member.user.displayAvatarURL({dynamic: true, format: "png", size: 1024 })) // agarrara el url del mienbro en png en tamaño 1024 y lo pondra en la aprte superior
-   .setFooter("haora Somos :", message.guild.memberCount) // puedes cambiarlo como gustes asta poner el id de que entro al grupo pero pues como dije las hare lo mas indentico a discord ayuda pero pues si quisiese poner el id de la persona solo cambialo a esto "Usuario: ' + member.user.id" si quisieras poner el tiempo de mensaje solo escribe debajo : .setTimestamp() *opcional*
-  
-   await channel.send(embed) // pondra el mensaje "embed" lo ya definimos que contiene esta arriba en el chnnel que pues tambien ya definimos arriba
-  
-  // asi acaba la parte de bienvenidas haora pasemos a despedidas aqui no explicare mucho porque es casi lo mismo solo cambiarias el gif y el canal de las despedidas y lo que tendra el embed ¯\_(?)_/¯
-  }
-  
-  });
-  client.on("guildMemberRemove", async (member) => {
-    
-    let guild = client.guilds.cache.get("863239099385118721")       
-    let channel = client.channels.cache.get("868611623428976660"); 
-  
-   
-  if (guild != member.guild) {
-    return console.log(`Salio Del Grupo, ${member.user}`) // *puedes modificarlo*
-  
-  } else {
-     let embed = new MessageEmbed()
-   .setColor("GREEN")
-   .setAuthor(member.user.tag, member.user.displayAvatarURL()) 
-   .setImage('https://media.giphy.com/media/3og0IG0skAiznZQLde/giphy.gif')
-   .setTitle(`${guild.name}`)
-     /// puedes modificarlo
-   .setDescription(`${member.user} , Te Extrañaremos`)
-   /// puedes modificarlo
-   .setThumbnail(member.user.displayAvatarURL({dynamic: true, format: "png", size: 1024 }))
-   .setFooter("haora Somos :", message.guild.memberCount)
-  
-   await channel.send(embed)
-  
-  } 
+  let wel = new Zeew.Bienvenida()
+    .token(config.token_zeew)
+    .estilo("classic")
+    .avatar(member.user.displayAvatarURL({ format: "png" }))
+    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+    .colorTit("#fff")
+    .titulo("Bienvenido " + member.displayName)
+    .colorDesc("#fff")
+    .descripcion("Tenemos un nuevo integrante con nosotros")
 
-}); // aqui acaba el comando espero que te alla servido , le podrias agregar mas funciones pero yo las hice identicas a las del discord ayuda , espero te alla servido !
+  let img = await Zeew.WelcomeZeew(wel);
+  let attachment = new MessageAttachment(img, "bienvenida.png")
+
+  client.channels.resolve("bienvenida").send(attachment);
+
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'bienvenida');
+  
+  if (!channel) return;
+
+  channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#872585454329942037> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
+
+});
+
+
+
+
+/////////////// Despedida ///////////////
+
+client.on("guildMemberRemove", async (member) => {
+
+  const channel = member.guild.channels.cache.find(ch => ch.name === '<#868611623428976660>');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Adios ${member} esperamos verte de nuevo.`);
+
+  let wel = new Zeew.Bienvenida()
+    .token(config.token_zeew)
+    .estilo("classic")
+    .avatar(member.user.displayAvatarURL({ format: "png" }))
+    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+    .colorTit("#fff")
+    .titulo("Adíos " + member.displayName)
+    .colorDesc("#fff")
+    .descripcion("Esperamos verte pronto.")
+
+  let img = await Zeew.WelcomeZeew(wel);
+  let attachment = new MessageAttachment(img, "despedida.png");
+
+  client.channels.resolve("<#868611623428976660>").send(attachment);
+
+});
 
 
 //////////////  Respuesta a mensajes //////////////
