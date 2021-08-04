@@ -68,7 +68,7 @@ client.on("guildMemberRemove", async (member) => {
   channel.send(`Adios ${member} esperamos verte de nuevo.`);
 
   let wel = new Zeew.Bienvenida()
-    .token(config.token_zeew)
+    .token("610add420069e6f82b758f6a")
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
     .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
