@@ -52,26 +52,26 @@ client.on("guildMemberAdd", async (member) => {
 
 client.on("guildMemberRemove", async (member) => {
 
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'despedida');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Adios ${member} esperamos verte de nuevo..`);
-
   let wel = new Zeew.Bienvenida()
     .token(config.token_zeew)
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
-    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+    .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832728029406429294/One-Piece-Anime-HD-Wallpapers-Free-Download-Wallpaperxyz.com-1_1.jpg")
     .colorTit("#fff")
-    .titulo("Adíos " + member.displayName)
+    .titulo("Bienvenido " + member.displayName)
     .colorDesc("#fff")
-    .descripcion("Esperamos verte pronto.")
+    .descripcion("Se acaba de ir un coder :(")
 
   let img = await Zeew.WelcomeZeew(wel);
-  let attachment = new MessageAttachment(img, "despedida.png");
+  let attachment = new MessageAttachment(img, "bienvenida.png")
 
-  client.channels.resolve("867822344809873449").send(attachment);
+  client.channels.resolve("867822514095652914").send(attachment);
+
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'despedida');
+  
+  if (!channel) return;
+
+  channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#816048713478307902> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
 
 });
 
