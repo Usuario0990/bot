@@ -122,14 +122,28 @@ client.on('message', msg => {
 
 // bienvenida
 
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.cache.find(ch => ch.name === '863239100059615253');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Bienvenido al server, ${member}`);
+client.on("guildMemberAdd'", member => {
+
+  const welcome = new Discord.MessageEmbed() 
+///consejo pueden poner .setTitle("Hola " + member.user.username) para decir el nombre
+//Resultado: Hola (El Nombre Del Usuario)
+
+// o tambien .setTitle("hola"+ member.user.username + "A Mi Servidor")
+//resultado: hola (El Nombre Del Usuario) A Mi Servidor
+
+  .setTitle("texto de bienvenida")
+///en .setColor() Dejen El 0x ejemplo: 0x39ff14, despues del ///0x ponen el hex del color
+	.setColor("0x(Y El Hex Del Color Sin El #)")
+  .setDescription("descripcion")
+  .setImage("la url de la imagen(opciona)")                                                                                         
+
+  client.channels.cache.get("id del canal").send(welcome)
+///Opcional
+  member.roles.add("id")
 });
+
+
+
 
 //ban
 
