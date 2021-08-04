@@ -29,7 +29,7 @@ client.on("guildMemberAdd", async (member) => {
     .token(config.token_zeew)
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
-    .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832728029406429294/One-Piece-Anime-HD-Wallpapers-Free-Download-Wallpaperxyz.com-1_1.jpg")
+    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
     .colorTit("#fff")
     .titulo("Bienvenido " + member.displayName)
     .colorDesc("#fff")
@@ -58,9 +58,9 @@ client.on("guildMemberRemove", async (member) => {
     .avatar(member.user.displayAvatarURL({ format: "png" }))
     .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832728029406429294/One-Piece-Anime-HD-Wallpapers-Free-Download-Wallpaperxyz.com-1_1.jpg")
     .colorTit("#fff")
-    .titulo("Bienvenido " + member.displayName)
+    .titulo("Adios " + member.displayName)
     .colorDesc("#fff")
-    .descripcion("Se acaba de ir un coder :(")
+    .descripcion("Adios coder :(")
 
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "bienvenida.png")
@@ -71,7 +71,7 @@ client.on("guildMemberRemove", async (member) => {
   
   if (!channel) return;
 
-  channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#816048713478307902> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
+  channel.send(`Adios ${member}`);
 
 });
 
