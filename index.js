@@ -9,8 +9,8 @@ function presence(){
   client.user.setPresence({
     status:"online",
     activity: {
-      name:"Bienvenido/a SUSCRIBETE al canal de Youtube",
-      type:"YOUTUBER",
+      name:"Bienvenido/a seas a estos lares",
+      type:"STREAMING",
       url: "https://www.youtube.com/channel/UCP_CFZCBFqb1m3UUfhSfloA"
     }
   })
@@ -21,12 +21,6 @@ client.on('ready', () => {
   presence();
 });
 
-
-// niveles //
-
-
-
-
 /////////////// Bienvenida ///////////////
 
 client.on("guildMemberAdd", async (member) => {
@@ -35,27 +29,24 @@ client.on("guildMemberAdd", async (member) => {
     .token(config.token_zeew)
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
-    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+    .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832728029406429294/One-Piece-Anime-HD-Wallpapers-Free-Download-Wallpaperxyz.com-1_1.jpg")
     .colorTit("#fff")
     .titulo("Bienvenido " + member.displayName)
     .colorDesc("#fff")
-    .descripcion("Tenemos un nuevo integrante con nosotros")
+    .descripcion("Tenemos un nuevo coder con nosotros")
 
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "bienvenida.png")
 
-  client.channels.resolve("bienvenida").send(attachment);
+  client.channels.resolve("867822514095652914").send(attachment);
 
   const channel = member.guild.channels.cache.find(ch => ch.name === 'bienvenida');
   
   if (!channel) return;
 
-  channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#872585454329942037> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
+  channel.send(`Bienvenid@ al server ${member}! pasate por el canal de <#816048713478307902> para poder evitar posibles conflictos y mantener una buena comunidad, sin mas que decir esperamos que te la pases bien durante tu estadia en el server.`);
 
 });
-
-
-
 
 /////////////// Despedida ///////////////
 
@@ -68,10 +59,10 @@ client.on("guildMemberRemove", async (member) => {
   channel.send(`Adios ${member} esperamos verte de nuevo.`);
 
   let wel = new Zeew.Bienvenida()
-    .token("610add420069e6f82b758f6a")
+    .token(config.token_zeew)
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
-    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+    .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832735302694862878/29822.jpg")
     .colorTit("#fff")
     .titulo("Adíos " + member.displayName)
     .colorDesc("#fff")
@@ -80,10 +71,9 @@ client.on("guildMemberRemove", async (member) => {
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "despedida.png");
 
-  client.channels.resolve("despedida").send(attachment);
+  client.channels.resolve("816052331744591902").send(attachment);
 
 });
-
 
 //////////////  Respuesta a mensajes //////////////
 
