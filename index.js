@@ -56,7 +56,7 @@ client.on("guildMemberRemove", async (member) => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send(`Adios ${member} esperamos verte de nuevo.`);
+  channel.send(`Adios ${member} esperamos verte de nuevo..`);
 
   let wel = new Zeew.Bienvenida()
     .token(config.token_zeew)
