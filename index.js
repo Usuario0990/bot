@@ -9,7 +9,7 @@ function presence(){
   client.user.setPresence({
     status:"online",
     activity: {
-      name:"Bienvenido/a seas a estos lares",
+      name:"Creando un bot desde 0",
       type:"STREAMING",
       url: "https://www.youtube.com/channel/UCP_CFZCBFqb1m3UUfhSfloA"
     }
