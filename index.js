@@ -131,7 +131,7 @@ client.on("guildMemberAdd'", member => {
 // o tambien .setTitle("hola"+ member.user.username + "A Mi Servidor")
 //resultado: hola (El Nombre Del Usuario) A Mi Servidor
 
-  .setTitle("texto de bienvenida")
+  .setTitle("bienvenida")
 ///en .setColor() Dejen El 0x ejemplo: 0x39ff14, despues del ///0x ponen el hex del color
 	.setColor("0x(Y El Hex Del Color Sin El #)")
   .setDescription("descripcion")
