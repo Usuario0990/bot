@@ -46,7 +46,7 @@ client.on("guildMemberAdd", async (member) => {
 
   client.channels.resolve("816048634168606760").send(attachment);
 
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'bienvenida');
+  const channel = member.guild.channels.cache.find(ch => ch.name === '868611544202743819');
   
   if (!channel) return;
 
