@@ -69,7 +69,7 @@ let wel = new Zeew.Bienvenida()
 let img = await Zeew.WelcomeZeew(wel);
 let attachment = new MessageAttachment(img, "zeew.gif");
     
-client.channels.resolve("ID DEL CANAL").send(attachment);
+client.channels.resolve("bienvenida").send(attachment);
 
 
 /////////////// Despedida ///////////////
