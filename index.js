@@ -44,7 +44,7 @@ client.on("guildMemberAdd", async (member) => {
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "bienvenida.png")
 
-  client.channels.resolve("816048634168606760").send(attachment);
+  client.channels.resolve("bienvenida").send(attachment);
 
   const channel = member.guild.channels.cache.find(ch => ch.name === '868611544202743819');
   
@@ -68,7 +68,7 @@ client.on("guildMemberRemove", async (member) => {
     .token(config.token_zeew)
     .estilo("classic")
     .avatar(member.user.displayAvatarURL({ format: "png" }))
-    .fondo("https://cdn.discordapp.com/attachments/832726533868879924/832735302694862878/29822.jpg")
+    .fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
     .colorTit("#fff")
     .titulo("Adíos " + member.displayName)
     .colorDesc("#fff")
@@ -77,7 +77,7 @@ client.on("guildMemberRemove", async (member) => {
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "despedida.png");
 
-  client.channels.resolve("816052331744591902").send(attachment);
+  client.channels.resolve("despedidas").send(attachment);
 
 });
 
