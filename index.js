@@ -61,7 +61,7 @@ client.on("guildMemberAdd", async (member) => {
 
 client.on("guildMemberRemove", async (member) => {
 
-  const channel = member.guild.channels.cache.find(ch => ch.name === '<#868611623428976660>');
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'despedida');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
@@ -80,7 +80,7 @@ client.on("guildMemberRemove", async (member) => {
   let img = await Zeew.WelcomeZeew(wel);
   let attachment = new MessageAttachment(img, "despedida.png");
 
-  client.channels.resolve("<#868611623428976660>").send(attachment);
+  client.channels.resolve("despedida").send(attachment);
 
 });
 
