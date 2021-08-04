@@ -54,6 +54,24 @@ client.on("guildMemberAdd", async (member) => {
 
 });
 
+
+
+let wel = new Zeew.Bienvenida()
+.token(config.token_zeew) // pide tu token
+.estilo("classic") //classic o anime
+.avatar(member.user.displayAvatarURL({ format: "png" }))
+.fondo("https://media.discordapp.net/attachments/859594790176817152/860324645009752094/854066.png?width=757&height=448")
+.colorTit("#FF3DB0")
+.titulo("Bienvenido " + member.displayName)
+.colorDesc("#fff")
+.descripcion("Tenemos un nuevo integrante con nosotros")
+    
+let img = await Zeew.WelcomeZeew(wel);
+let attachment = new MessageAttachment(img, "zeew.gif");
+    
+client.channels.resolve("ID DEL CANAL").send(attachment);
+
+
 /////////////// Despedida ///////////////
 
 client.on("guildMemberRemove", async (member) => {
