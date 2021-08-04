@@ -130,26 +130,6 @@ client.on('message', msg => {
 
 // bienvenida
 
-client.on("guildMemberAdd'", member => {
-
-  const welcome = new Discord.MessageEmbed() 
-///consejo pueden poner .setTitle("Hola " + member.user.username) para decir el nombre
-//Resultado: Hola (El Nombre Del Usuario)
-
-// o tambien .setTitle("hola"+ member.user.username + "A Mi Servidor")
-//resultado: hola (El Nombre Del Usuario) A Mi Servidor
-
-  .setTitle("bienvenida" + member.user.username)
-///en .setColor() Dejen El 0x ejemplo: 0x39ff14, despues del ///0x ponen el hex del color
-	.setColor("#00D7FC")
-  .setDescription("descripcion")
-  .setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKe13RQvFFPRaYGJdBtgWEilrmHJMMLAyzw&usqp=CAU")                                                                                         
-
-  client.channels.cache.get("863239100059615253").send(welcome)
-///Opcional
-  member.roles.add("870479186341556274")
-});
-
 
 
 
