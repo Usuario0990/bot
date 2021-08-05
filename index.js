@@ -90,6 +90,57 @@ client.on("message", (message) => {
 });
 
 
+////// elimina mensjes
+
+
+const Discord = require("discord.js");//Instalar npm -> discord.js
+const { MessageEmbed } = require("discord.js");
+const { Color } = require("../../config.js");//Al igual que config.js
+
+//Inicio
+    message.delete();
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))//Necesitas permisos para eliminar mensajes
+      return message.channel.send(
+        "No Tienes Permisos Para Utilizar Este Comando"//Cualquiera que no tenga permiso no podr� utilizar este comando
+      );
+
+    if (!args[0])
+      return message.channel.send(`Por Favor, Dame Una Cantidad`);
+
+    if (isNaN(args[0]))
+      return message.channel.send(`Por favor, Dame Un Valor Numerico`);
+
+    if (args[0] < 4)//Aqui puedes definir el minimo de mensajes
+      return message.channel.send(
+        `Puedes eliminarlos ${args[0]} tu mismo, no son tantos mensajes`
+      );
+
+    if (args[0] > 100)//Esto no lo modifiquen
+      return message.channel.send(
+        `No puedo eliminar mas de 100 mensajes ${args[0]} es el limite de discord`
+      );
+
+    let Reason = args.slice(1).join(" ") || "Ninguna razon proporcionada";
+
+    message.channel.bulkDelete(args[0]).then(Message => {
+      let embed = new Discord.MessageEmbed()
+        .setColor(Color)
+        .setTitle(`**__Mensajes Eliminados__**`)
+        .addField(`Staff`, `**${message.author.tag}**`)
+        .addField(`Canal`, `**${message.channel.name}**`)
+        .addField(`Mensajes Eliminados`, `**${Message.size}**`)
+        .addField(`�Razon?`, `**${Reason}**`)
+        .setFooter(`Pedido Por ${message.author.username}`)
+        .setTimestamp();
+      return message.channel
+        .send(embed)
+        .then(msg => msg.delete({ timeout: 10000 }));
+    });
+
+    //Listo
+  }};
+
+
 /////////////// Anuncio Embed //////////////////
 
 client.on('message', message => {
