@@ -93,58 +93,21 @@ client.on("message", (message) => {
 ////// elimina mensjes
 
 
-exports.run = async (client, message, args) => {
-
-    if (message.content === "!piedra") {
-
-  // Condicionaremos que si el usuario no manda ningun argumento. O sea solo escribe el comando. *
-  if(!args[0]) return message.channel.send("Opciones: `piedra`, `papel` o `tijera`").then(m => m.delete({timeout: 10000})) //El .then() es opcional, yo siempre lo agrego porque me gusta.
-  
-  // Haremos una declaracion en matriz con las diferentes opciones ya dichas.
-  let Options = ["piedra", "papel", "tijera"]
-  // Condicionamos la matriz con el metodo .includes() que nos va a determinar si lo que mandamos esta dentro de la matriz, si es si no devolvera true sino false.
-  if(!Options.includes(args[0].toLowerCase())) return message.channel.send(":x: Opcion incorrecta!")
-  
-  //Ahora empezamos a obtener las cosas de la matriz y condicionamos..
-  
-  // Si args[0] es igual a "piedra" (if(args[0] == <piedra/papel/tijera>) {})
-  if(args[0] == "piedra") {
-
-    // Creamos una condicional de matriz que tendra las respuestas.
-    let random1 = ["He ganado! Elegi papel. El papel cubre a la roca.", // Perdedor -jeje-
-                   "Has ganado! Elegi tijera. Las tijeras no pueden cortar rocas.",  // Ganaste :D
-                   "Empate. Piedra vs piedra, gana... La piedra!"] // Empate ._.
-
-    // Enviamos el mensaje aplicando Math.random() que nos dara una respuesta aleatoria de la matriz.
-    message.reply(" "+random1[Math.floor(Math.random() * random1.length)]+"")
-    
-    // Si no es "piedra", pero es "papel"
-  } else if(args[0] == "papel") {
-
-    let random2 = ["He ganado! Elegi tijera. Las tijeras cortan el papel.", // Perdedor -jeje-
-                   "Has ganado! Elegi piedra. El papel cubre a la roca.",  // Ganaste :D
-                   "Empate."] // Empate ._.
-
-    message.reply(" "+random2[Math.floor(Math.random() * random2.length)]+"")
-    
-  } else if(args[0] == "tijera") {} //Hagan este ultimo ustedes, no les voy a hacer el code al 100% xd
-  
+if(!message.member.hasPermission("!apodo")){ //Verificamos si user tiene permisos suficientes
+    return message.channel.send("[â] No tienes permisos || **Necesitas permisos de `Gestionar apodos`**") //lo que dice si no tiene permisos
 }
 
-exports.help = {
-  comando: 'rps',
-  ejemplo: ["<prefix>rps <papel/piedra/tijera>"]
+let persona = message.mentions.members.first() //Definimos "persona" como al que le hizo ping
+if(!persona) {
+    return message.channel.send("[â] No hay una persona || **Debes mencionar a una persona**") //lo que dice si no menciono a nadie
+}else if(persona.highestRole.comparePositionTo(message.member.highestRole) > 0){
+    return message.channel.send("[â] No tienes permisos || **Esa persona tiene tu mismo o superior rol**") //lo que dice si esa persona tiene tu mismo o  superior rol *Depende de la jerarquia de discord*
 }
-
+let apodo = args.slice(1).join(' ') //Defiinimos "apodo" como el nuevo apodo del "persona"
+if(!apodo) return message.channel.send("[â] No hay apodo || **Debes escribir el apodo a cambiar**") //lo que dice si no hay apodo definido
+persona.setNickname(apodo) //El bot hace el cambio del apodo usando "persona" y "apodo"
+message.channel.send(`Listo, el nuevo apodo de ${persona} es **${apodo}**`) //Mensaje diciendo el nuevo apodo de la persona
 }
-/*
-Seguramente no les ha servido, pero si les sirvio de algo dejenle un like ;)
-
-Obviamente, antes de nada, quiero decir algo MUY IMPORTANTE... Crater te amo! <3
-
-Es todo, adios!
-*/
-
 
 /////////////// Anuncio Embed //////////////////
 
