@@ -78,17 +78,16 @@ client.on("guildMemberRemove", async (member) => {
 //////////////  Respuesta a mensajes //////////////
 
 
-client.on('message', message => {
-
-  if (message.content === '!link') {
-
+client.on("message", (message) => {
+  if (message.content === "!link") {
     const embed = new MessageEmbed()
-      .setTitle('¡Link de invitacion!')
-      .setColor('#00D7FC')
-      .setDescription('https://discord.com/oauth2/authorize?client_id=863245184791609404&scope=bot&permissions=8')
+      .setTitle("Link de invitacion de Striks")
+      .setColor("#00D7FC")
+      .setDescription("https://discord.com/oauth2/authorize?client_id=863245184791609404&scope=bot&permissions=8");
 
     message.channel.send(embed);
   }
+});
 
 
 /////////////// Anuncio Embed //////////////////
