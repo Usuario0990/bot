@@ -95,6 +95,8 @@ client.on("message", (message) => {
 
 exports.run = async (client, message, args) => {
 
+    if (message.content === "!piedra") {
+
   // Condicionaremos que si el usuario no manda ningun argumento. O sea solo escribe el comando. *
   if(!args[0]) return message.channel.send("Opciones: `piedra`, `papel` o `tijera`").then(m => m.delete({timeout: 10000})) //El .then() es opcional, yo siempre lo agrego porque me gusta.
   
@@ -134,6 +136,7 @@ exports.help = {
   ejemplo: ["<prefix>rps <papel/piedra/tijera>"]
 }
 
+}
 /*
 Seguramente no les ha servido, pero si les sirvio de algo dejenle un like ;)
 
