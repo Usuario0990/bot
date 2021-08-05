@@ -93,52 +93,54 @@ client.on("message", (message) => {
 ////// elimina mensjes
 
 
-const Discord = require("discord.js");//Instalar npm -> discord.js
-const { MessageEmbed } = require("discord.js");
-const { Color } = require("../../config.js");//Al igual que config.js
+exports.run = async (client, message, args) => {
 
-//Inicio
-    message.delete();
-    if (!message.member.hasPermission("eliminaM"))//Necesitas permisos para eliminar mensajes
-      return message.channel.send(
-        "No Tienes Permisos Para Utilizar Este Comando"//Cualquiera que no tenga permiso no podr� utilizar este comando
-      );
+  // Condicionaremos que si el usuario no manda ningun argumento. O sea solo escribe el comando. *
+  if(!args[0]) return message.channel.send("Opciones: `piedra`, `papel` o `tijera`").then(m => m.delete({timeout: 10000})) //El .then() es opcional, yo siempre lo agrego porque me gusta.
+  
+  // Haremos una declaracion en matriz con las diferentes opciones ya dichas.
+  let Options = ["piedra", "papel", "tijera"]
+  // Condicionamos la matriz con el metodo .includes() que nos va a determinar si lo que mandamos esta dentro de la matriz, si es si no devolvera true sino false.
+  if(!Options.includes(args[0].toLowerCase())) return message.channel.send(":x: Opcion incorrecta!")
+  
+  //Ahora empezamos a obtener las cosas de la matriz y condicionamos..
+  
+  // Si args[0] es igual a "piedra" (if(args[0] == <piedra/papel/tijera>) {})
+  if(args[0] == "piedra") {
 
-    if (!args[0])
-      return message.channel.send(`Por Favor, Dame Una Cantidad`);
+    // Creamos una condicional de matriz que tendra las respuestas.
+    let random1 = ["He ganado! Elegi papel. El papel cubre a la roca.", // Perdedor -jeje-
+                   "Has ganado! Elegi tijera. Las tijeras no pueden cortar rocas.",  // Ganaste :D
+                   "Empate. Piedra vs piedra, gana... La piedra!"] // Empate ._.
 
-    if (isNaN(args[0]))
-      return message.channel.send(`Por favor, Dame Un Valor Numerico`);
+    // Enviamos el mensaje aplicando Math.random() que nos dara una respuesta aleatoria de la matriz.
+    message.reply(" "+random1[Math.floor(Math.random() * random1.length)]+"")
+    
+    // Si no es "piedra", pero es "papel"
+  } else if(args[0] == "papel") {
 
-    if (args[0] < 4)//Aqui puedes definir el minimo de mensajes
-      return message.channel.send(
-        `Puedes eliminarlos ${args[0]} tu mismo, no son tantos mensajes`
-      );
+    let random2 = ["He ganado! Elegi tijera. Las tijeras cortan el papel.", // Perdedor -jeje-
+                   "Has ganado! Elegi piedra. El papel cubre a la roca.",  // Ganaste :D
+                   "Empate."] // Empate ._.
 
-    if (args[0] > 100)//Esto no lo modifiquen
-      return message.channel.send(
-        `No puedo eliminar mas de 100 mensajes ${args[0]} es el limite de discord`
-      );
+    message.reply(" "+random2[Math.floor(Math.random() * random2.length)]+"")
+    
+  } else if(args[0] == "tijera") {} //Hagan este ultimo ustedes, no les voy a hacer el code al 100% xd
+  
+}
 
-    let Reason = args.slice(1).join(" ") || "Ninguna razon proporcionada";
+exports.help = {
+  comando: 'rps',
+  ejemplo: ["<prefix>rps <papel/piedra/tijera>"]
+}
 
-    message.channel.bulkDelete(args[0]).then(Message => {
-      let embed = new Discord.MessageEmbed()
-        .setColor(Color)
-        .setTitle(`**__Mensajes Eliminados__**`)
-        .addField(`Staff`, `**${message.author.tag}**`)
-        .addField(`Canal`, `**${message.channel.name}**`)
-        .addField(`Mensajes Eliminados`, `**${Message.size}**`)
-        .addField(`�Razon?`, `**${Reason}**`)
-        .setFooter(`Pedido Por ${message.author.username}`)
-        .setTimestamp();
-      return message.channel
-        .send(embed)
-        .then(msg => msg.delete({ timeout: 10000 }));
-    });
+/*
+Seguramente no les ha servido, pero si les sirvio de algo dejenle un like ;)
 
-    //Listo
-  }};
+Obviamente, antes de nada, quiero decir algo MUY IMPORTANTE... Crater te amo! <3
+
+Es todo, adios!
+*/
 
 
 /////////////// Anuncio Embed //////////////////
