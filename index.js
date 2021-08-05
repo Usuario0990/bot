@@ -99,7 +99,7 @@ const { Color } = require("../../config.js");//Al igual que config.js
 
 //Inicio
     message.delete();
-    if (!message.member.hasPermission("MANAGE_MESSAGES"))//Necesitas permisos para eliminar mensajes
+    if (!message.member.hasPermission("eliminaM"))//Necesitas permisos para eliminar mensajes
       return message.channel.send(
         "No Tienes Permisos Para Utilizar Este Comando"//Cualquiera que no tenga permiso no podr� utilizar este comando
       );
